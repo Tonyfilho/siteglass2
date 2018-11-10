@@ -1,0 +1,233 @@
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web'); /* com este paramentro add um fonte externa vinda de um
+site de fonte, neste caso usamos goggle.com/fonts e conf.  a linha 53 no H2 */
+@font-face {      /*Neste Paramentro add uma FONTE interna do nosso diretorio _fonts */
+	font-family:'fonteteste';  /* no FONT-FAMILY:FONTETESTE colocamos um nome"ID" na fonte e mudamos o H1; */
+	src: url(../_fonts/bubblegum-sans-regular.otf);  /* diretório onde se encontra a fonte */
+}
+	p { 
+			    text-align: justify;
+				text-indent: 50px;
+	}
+	a {
+		color: #606060;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	body { 
+		font-family: arial, sans-serif;
+		background-color: #dddddd; /* aula 15 mudaremos a cor da inteface conforme  o definido no curso */
+		   color: rgba(0,0,0,0.9);
+	}
+
+	div#interface{ /* aula 15 Por motivos de organização configuraremos a tag DIV do html aqui depois da tag BODY apesar de ser a aula 15 */
+		width: 900px; /* aula 15 neste paramentro colocamos a lagura da DIV em 900 píxel  */ 
+		background-color: #ffffff; /* aula 15 neste parametro colocamos um cor branca somente dentro da DIV*/
+		margin: -20px auto 0px auto; /*  aula 15 LEMBRE-se MARGENS são sempre nesta ordem: SUPERIOR, DIREITA, INFERIOR E ESQUERDA */
+                                      /* Mudaremos as confurações das MARGENS DIREITA E ESQUERDA, deixando serem configuradas AUTOMATICAMENTE pelo navegador */
+	    box-shadow: 0px 0px 10px rgba(0,0,0,.6);
+	    padding:10px 10px 10px 10px;  /* aula 15 . Aqui configuraremos o espaço entre a DIV e as letras de 10 pixel, segue o exemplo */ 
+      /*paddind:10px caso todos o valores sejão iguais , podemos informar somente 1 vez */
+	}
+
+	header#cabecalho img#icone{ /* aula 15 a tag HEADER#cabeçalho serve para conf. a tag IMG#icone.*/ 
+		position: absolute;
+		left:880px;
+		top:40px;
+	}
+	header#cabecalho hgroup {  /* aula 16 neste paramentro conf. o cabeçalho que começa HEADER /HEADER */ 
+		border-bottom: 1px #606060 solid; /* aula 16 aqui estamos criando um borda(linha) */ 
+		height: 150px; /* aula 16 aqui definimos a altura da borda de 150 píxels*/ 
+		background: url(../_imagens/glass-logo-peq.jpg) no-repeat 0px 100px; /* aula 16 Usando o BACKGROUND: URL para adcionarmos IMAGENS; */
+		/* aula 16 com os paramentros NO-REPEAT E 0PX 100PX fazemos que a imagens n seja repetida e conf. as localização */
+		/* 0PX 100PX deslocamento lateral ficou 0PX  e a deslocamento vertical ficou 100PX  */
+
+	}
+	header#cabecalho h1 { /* aula 16 Conf. tudo de H1 do cabeçalho*/
+		font-family: 'fonteteste'; /* aula 17 Aqui config. o TIPO  usañdo um aquivo de fonte chamada de 'fonteteste' entre ASPAS SIMPLES*/
+		font-size: 30pt; /* aula 16 . Aqui configuramos o tamanho da fonte em PONTOS*/
+		color: #606060; /* aula 16 . Aqui configuramos a cor da fonte do H1*/
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.7); /* aula 16. Aqui daremos uma sombra na fonte, para decorarmos */
+		padding: 0px; /* aula 16. Config a dist. interna do H1 */
+		margin-bottom: 0px; /* aula 16. Config a margem inferior do H1, visto que as outras estão config. na linha 15*/	
+	}
+	header#cabecalho h2{
+		font-family: 'Titillium Web', sans-serif;  /* Usamos a fonte do google.com/fonts  */
+		font-size: 15pt;
+		color: #888888;
+		padding: 0px; /* aula 16. Config. a distancia interna do H2*/
+		margin-top: 0px;
+	}
+
+	/* formatação de  imagens com legenda*/
+ 	figure.foto-legenda {  
+ 	position: relative;  
+ 	border: 4px solid write; 
+ 	box-shadow: 1px 1px 4px black; 
+ 	 }
+
+ 	figure.foto-legenda img {
+ 	width: 100%;  
+ 	height: 100%; 
+ 	}
+ 	figure.foto-legenda figcaption {  
+ 	opacity: 0;    
+ 	position: absolute; 
+ 	top:0px;     
+ 	background-color: rgba(0,0,0,0.4);  
+ 	color: white; 
+ 	width: 100%;   
+	 height: 100%;  
+	 padding: 10px; 
+	 box-sizing: border-box; 
+	 transition: opacity 1s; 
+ 	}
+
+ 	figure.foto-legenda:hover figcaption {  
+ 	opacity: 1; 
+ 	 }
+             /* nesta aula 13 estaremos configurando o menu para que ele  venha flutuar na pagina. */
+  nav#menu { /* Este nav#menu é o padrão para iniciarmos a confurações. */
+
+  	display: block;  	 /* criamos um bloco e tudo que pertencer ao NAV#MENU ficará dentro deste bloco * um bloco é feito para que tudo que esteva nele flutue ou seja relocado*/ 
+   }
+  nav#menu ul  { /* Lembrando no CSS toda a vez que usarmos um ID do HTML, temos que identificar com # aqui no CSS */
+  				/*  a 1ª formatação será tudo que "UL" que é "unorderlist" ficará ocultado, ou seja aqueles circulos antes do nome do menu */
+ 
+   list-style: none; /* com esta linha de comando,esconderemos a configuração do "UL" no menu aqueles marcadores em forma de circo*/
+   text-transform: uppercase; /* com esta linha as letras do menu ficarão com cx alta ou seja maiusculas */
+   position: absolute; /* com este paramentro config. a localização na opção absoluta da pagina*/
+   top: -20px;  /* Neste parametro o menu ficará há -20 píxel do topo da pagina por causa da margem que é 0* com isto ela ficará bem no topo */ 
+   left: 500px; /* Neste parametro o menu ficará há 600 píxel para esquerda */ 
+
+  }
+  nav#menu li { /* com este paramentro configuraremos as "LI" do menu.  */
+   
+   display: inline-block; /* o paramentro "DISPLAY cria um display o INLINE-BLOCK" faz com que o paramentro seja exibido na mesma linha*/
+   background-color: #dddddd; /* criando uma cor no fundo as palavras do menu com a cor padrão cinza */
+   padding: 10px; /* o PADDING cria um espaço DENTRO DO OBJETO menu de 10 píxels*/ 
+   margin: 1px; /* o MARGIN cria um espaço ENTRE os objeto do menu de 1 píxel*/
+   transition: background-color 1s; /* aula14 Com esta opção o HOVER logo abaixo passa a funcionar, ou seja alem de por o hover temos que por esta*/
+  }
+  nav#menu li:hover { /* aula14 Com a Opção HOVER faremos a função de botão on/off, ou seja quando passarmos o mouse ele ativa a função */
+  	background-color: #606060;
+  }
+ nav#menu h1 {  /*  neste comando esconderemos a opção menu do INDEX.HTML que tem um H1, com isto ele terá valores SEMÂNTICOS somente para mecanimos de buscas, sem necessidade aparecer  */ 
+ display: none; 
+ }
+ nav#menu a {   /* aula14 com este parametro a tag <a> */
+ 	color: #000000;  /* aula14 aqui colocaremos um cor preta na letra */
+ 	text-decoration: none; /* aqui tirãremos o sublinhado das palavras do MENU */ 
+ }
+ nav#menu a:hover {  /* aula14 com este parametro colocaremos um on/off na tag <a> */
+ 	color: #ffffff;  /* aula14 assim que passar o mouse nõ menu liga a cor branca*/
+ 	text-decoration: underline; /* aula14 assim que passar o mouse no menu liga o sublinhado*/
+ }
+
+section#corpo { /* SECTION#CORPO é p/ config e criar uma divisão do TEXTO principal que ficará na corpo */
+    display: block; /* o DISPLAY é o paramentro que  usamos para criar um caixa dentro do BODY da linha 13*/
+    width: 500px; /* WIDTH conf. a largura do DISPLAY */
+    float: left; /* o FLOAT:LEFT é o paramentro que faz com que o DISPLAY flutue e fique  na ESQUERDA onde escolhermos.. */
+    border-right: 1px solid #606060; /* Criamos uma borda(linha) com LARGURA 1PX, TIPO SOLIDA E COR #606060 */
+    padding-right: 15px; /* com PADDING-RIGHT criamos um espaço de 15PX do texto para a BORDA que separa o ASIDE*/
+}
+hgroup#cabecalho h1{
+	font-family: 'fonteteste', sans-serif;
+	font-size: 25pt;
+	color: #606060;
+	margin-bottom: 0px;
+}
+hgroup#cabecalho h2{
+	font-size: 13pt;
+	color: #cecece;
+	margin-top: 0px;
+}
+hgroup#cabecalho h3{
+	font-size: 12pt;
+	color: #606060;	
+}
+.direita{
+	text-align: right;
+
+}
+article#primeiro h2 {  /* ARTICLE#PRIMEIRO H2 conf. todos H2 que ficarem entre ARTICLE e /ARTICLE*/
+	font-size: 12;
+	color: #606060;
+	background-color: #dddddd;
+	padding: 5px 0px 5px 10px;
+}
+ table#tabela1 {   /* TABLE#TABELA1 esta tag serve para conf. a tabela */
+ 	border: 1px solid #606060;  /*Criamos uma linha(border) de  1 píxel, tipo solid e cor #606060 */
+ 	border-spacing: 0px;        /* Criamos um espaço de 0px na borda, somente para travar a borda*/
+ 	margin-left: auto;          /* Criamos a margin esquerda e informamos o paramentro AUTOMATICO */
+ 	margin-right: auto;         /* Criamos a margin direita e informamos o paramentro AUTOMATICO */
+ }
+ table#tabela1 td {             /* TABLE#TABELA1 esta tag serve para conf. a tabela */
+ 	border: 1px solid #606060;  /*Criamos uma linha(border) de  1 píxel, tipo solid e cor #606060 */
+ 	padding: 10px;              /* Criamos um espaço de 10px entre as linhas do TD*/
+ 	text-align: center;         /* Criamos um alinhamento HORIZONTAL do texto da tabela TD com paramentro CENTER */
+ 	vertical-align: middle;      /* Criamos uma alinhamento VERTICAL do texto da tabela TD com paramentro MIDDLE*/
+ 	 }
+ caption#tabela1 {               /* CAPTION#TABELA1 é para conf. tudo que tiver entre CAPTION e /CAPTION */
+ 	font-family: 'Titillium Web', sans-serif;  /* Conf. uma fonte para TITÙLO da tabela */
+ 	font-size: 15pt;             /* Conf. tamanho da fonte TITÙLO da tabela  */
+ 	color: #606060; 
+ 	font-weight: bolder;             /* Conf. uma cor da fonte TITÙLO da tabela */ 
+ }
+ span#tab {                       /* SPAN#TAB config. tudo que está dentro do SPAN/SPAN "MAR2013"  da linha 61*/
+ 	font-family: 'Titillium Web', sans-serif;  
+ 	display: block;   /* Cria um bloco tipo CX para separa lo e desconecta-lo do restante do texto. */
+ 	float: right;     /* Cria uma flutuação para direita*/
+ 	color: #000000;   
+ 	font-size: 8pt;
+ 	font-weight: bolder;
+ 	margin-top: 15px;   /* Cria uma marquem para abaixarmos 15px o texto */
+ }
+ table#tabela1 td.esq {           /* TABLE#TABELA1 TD.ESC config. tudo que ficará a ESQUERDA da TABELA */
+ 	color: #ffffff;
+ 	background: #606060;
+ 	vertical-align: top;
+ 	font-weight: bold;
+
+ }
+ table#tabela1 td.dir {           /* TABLE#TABELA1 TD.DIR config. tudo que ficará a DIREITA da TABELA */
+ 	background: #cecece
+
+ }
+aside#lateral {  /* ASIDE#LATERAL é p/ config e criar uma divisão no TEXTO principal que ficará a lateral do SECTION#CORPO */
+	display: block; /* o DISPLAY é o paramentro que  usamos para criar um caixa dentro do BODY da linha 13*/
+	width: 350px; /*  o WIDTH conf. a largura do DISPLAY */
+	float: right;  /* o FLOAT é o paramentro que faz com que o DISPLAY flutue e fique na DIREITA onde escolhermos.. */
+	background-color: #dddddd;
+	padding: 10px;
+	margin-top: 10px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.6);
+}
+aside#lateral h1{
+	font-family: 'fonteteste', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-top: 0px;
+
+}
+aside#lateral h2{
+	background-color: #606060;
+	font-size: 15pt;
+	color: #ffffff;
+	padding: 5px 0px 5px 10px;
+
+}
+footer#rodape {
+	clear: both;  /* CLEAR:BOTH faz com que o conteudo do RODAPE fique fora da conf. do SECTION E ASIDE, 
+	com isto a pagina volta a ficar com tamanho normal*/
+	border-top: 1px solid #606060; /* Criamos uma borda(linha) com LARGURA 1PX, TIPO SOLIDA E COR #606060 
+	que separa o RODAPE do corpo.*/
+}
+
+footer#rodape p {  /* Neste FOOOTER#RODAPE P conf. o paragráfo do rodape */
+	text-align: center;  /* Neste paramentro conf. o alinhamento dos textos 
+	                     do rodapé, é importante  ver como está conf. o HTML*/
+}
