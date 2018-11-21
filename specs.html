@@ -1,52 +1,84 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Espefificações do Google Glass</title>
     <link rel="stylesheet" type="text/css" media="screen" href="_css/estilo.css" />
-    <script  src="_javascript/funcoes.js" ></script>
+    <link rel="stylesheet"  type="text/css" href="_css/specs.css"> <!--2º link do CSS para conf. do IFRAME aula 27-->
+    <script src="_javascript/funcoes.js"></script>
 </head>
 <body>
-    <div id="interface" >
-        <header id="cabecalho">  
+<div id="interface">
+    
+    
+<header id="cabecalho">
+            <hgroup>
+            <h1>Google Glass</h1> 
+            <h2>A revolução do Google está chegando</h2> 
+</hgroup>
 
-        <hgroup>
-           <h1>Google Glass</h1> 
-            <h2> A revolução do Google está chegando</h2>
-        </hgroup>
-        
-            <img  id="icone" src="_imagens/especificacoes.png" >
+<img id="icone" src="_imagens/especificacoes.png" alt="Especificações sobre o Google Glass">
 
-        <nav id="menu">
 
-            <h1>Menu Principal</h1> 
-        <ul>
-            <li onmouseover="mudaFoto('_imagens/home.png')"  onmouseout="mudaFoto('_imagens/especificacoes.png')" > <a href="index.html"> Home</a></li> 
-            <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')" ><a href="specs.html"> Especificações</a></li> 
-            <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"> <a href="fotos.html"> Fotos </a> </li> 
-            <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="multimidia.html"> Multimídia </a></li> 
-            <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')" > <a href="fale-conosco.html">Fale conosco</a></li> 
-        </ul>
-        </nav>
-        </header>       
-        <hgroup  id="cabecalho">
-            <h3>Glass > Especificações</h3> 
-            <h1>Raio-X no Google Glass</h1> 
+<h1> Menu Principal</h1>
+<nav  id="menu">
+    <ul>
+            <li onmouseover="mudaFoto('_imagens/Home.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')" > <a href="index.html"> Home</a></li>
+            <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"> <a href="specs.html"></a> Especificações</li>  
+            <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')" ><a href="fotos.html"> Fotos</a></li> 
+            <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')" ><a href="multimidia.html"> Multimídia</a></li>
+            <li onmouseover="mudaFoto('_imagens/contato.png')"   onmouseout="mudaFoto('_imagens/especificacoes.png')" ><a href="fale-conosco.html"> Fale conosco</a></li> 
+    </ul>
+</nav>
+
+</header>
+<section id="corpoFull" > <!--Aula 27 IFRAMES, Criamos esta SECTION#CORPOFULL aqui, para o IFRAME e manipularmos ele no CSS-->
+<hgroup id="cabecalho">
+
+           <h3>Glass > Especificações</h3> 
+           <h1>Raio-X no Google Glass</h1> 
             <h2>por Tony Filho</h2> 
-            <h3 class="direita">Atualizado em 18/Novembro/2018</h3> 
-        </hgroup>
-Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.
+           <h3 class="direita" >Atualizado em 30/novembro/2018</h3> 
+</hgroup>
 
-[AQUI ENTRA UMA IMAGEM]
+  <p> Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do 
+      Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.</p>
 
-<footer id="rodape">
 
-<p> Copyright 2013 - by Tony Filho <br/>
-<a href="http://facebook.com/cursosemvideo" target="_blank" > Facebook&copy; </a> | 
-<a href="http://twitter.com/cursosemvideo"  target="_blank"> Twitter&copy;</a></p>
 
-</footer>
+<section id="conteudo">   <!--Aula 27 IFRAMES, Criamos esta SECTION#CONTEUDO aqui, 
+para o IFRAME e manipularmos ele no CSS-->  
+
+    <img src="_imagens/glass-esquema-marcado.jpg" alt="Imagem do oculos do Google Glass" usemap="#meumapa" /> <!--AULA 28 USEMAP="#MEUMAPA 
+        foi adicionado para linkar a IMG com  tag MAP NAME="MEUMAPA""-->
+        <map name="meumapa">
+             <!--Toda tag MAP tem que ter um 
+            tag AREA sem fechamento e toda tag AREA tem para metros SHAPE que são, procurar no softares de IMAGENS,tipo GYMP,FOTOSHOP e outros nomalmente a tecla F8 a ABA INFORMAÇÔES 
+            onde motra os EIXOS X e Y do cursor  do amouse sobre a  parte da imagem, todo editor tem, lembrando que escolher as medidas em PÍXELS
+            HREF é o link do arquivo a ser aberto com a opção #TELA que é a ID onde que queremos que a IMG seja aberta o TARGET="janela" onde JANELA é o NAME é o paramentro 
+            usado  no IFRAME abaixo depois do comentário na linha 66 -->
+            <!--RECT (RETANGULO) que tem 2 COORDS c/ 4 valores (COORDENADAS) em X e Y no canto ESQ SUPERIOR e canto DIR INFERIOR--> 
+            <!--CIRCLE (CIRCULO) que tem 2 COORDS c/ 3 valores  sendo o ultimo ro RAIO (COORDENADAS) em X e Y no CENTRO e RAIO-->
+            <!--POLY (POLIGNO que tem COORDS (COORDENADAS) em X e Y em cada lado no minimo 3 lados sempre no sentido horário=-->
+            <!--Resulmo , dentro da TAG MAP vc tem AREA, na AREA vc tem paramentros SHAPE que é o formato, COORDS que são as localizações do eixo X e Y do local onde vc quer linkar 
+            o mapa, vc tem HREF que é  o link da ARQUIVO com final HTML#nome da ID no html e o TARGET="JANELA" q neste exemplo se chama NAME=JANELA na TAG IFRAME-->
+            <area shape="rect" coords="179,202,270,260" href="google-glass.html#tela"  target="janela" alt="Imagens da Tela do google Glass">
+            <area shape="circle" coords="158,243,12"  href="google-glass.html#camera"  target="janela" alt="Imagens da Tela do google Glass">
+            <area shape="circle" coords="73,53,12"    href="google-glass.html#gadgets"  target="janela" alt="Imagens da Tela do google Glass">
+            <area shape="poly" coords="28,143,83,216,84,249,27,169" href="google-glass.html#sensores"  target="janela" alt="Imagens da Tela do google Glass">
+        </map>
+    <iframe src="google-glass.html"  name="janela" id="frameSpec" scrowlling="no" ></iframe> <!--Todo IFRAME tem que ter o fechamento da tag
+    neste caso nao colocaremos conteúdo no meio da tag, TODO IFRAME tem que ter  1 NOME e 1 ID-->
+    </section>
+
+</section>
+
+<footer id="rodape" >
+
+<p> Copyright 2013 - by Tony Filho <br>
+    <a href="http://facebook.com/cursosemvideo">Facebook&copy;</a> |
+    <a href="http://twitter.com/cursosemvideo">Twitter&copy;</a></p>
+   </footer>
 
 </div>
 </body>

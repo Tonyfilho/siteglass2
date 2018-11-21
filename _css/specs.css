@@ -1,0 +1,23 @@
+/* Conf. do CCS da pagina SPECS.HTML*/
+
+@charset "UTF-8" ;
+
+section#conteudo {
+    width: 1000px; /*Criamos uma largura de 1000 Píxel na pagina na SECTION#CONTEUDO*/
+    margin: auto; /* O conteúdo ficará centralizado independente do tamanho da pagina*/
+}
+
+iframe#frameSpec { /* conf. da ID=FRAMEsPEC do specs.html */
+    width: 400px; /*Criamos uma largura de 400 Píxel na pagina no IFRAME#FRAMEsPEC  */
+    height: 280px; /*Criamos uma altura de 280 Píxel na pagina na SECTION#CONTEUDO*/
+    border: none ; /* Remove a borda do IFRAME*/
+    overflow: hidden; /* Remove a barra lateral de up/down do arq. no iframe */
+    /*OBS.: OVERFLOW: HIDDEN não funcionará em todos os navegadores*/ 
+   
+}
+iframe#frameSpec ::-webkit-scrollbar { /* a TAG ::-webkit-scrollba  sever para dar a chamada 
+    para tirarmos a barra de rolagem lateral do arquivo do iframe  */
+    display: none;
+
+     /*OBS.: OVERFLOW: HIDDEN junto com ::-WEBKIT-SCROLLBAR não funcionará em todos os navegadores*/ 
+}
