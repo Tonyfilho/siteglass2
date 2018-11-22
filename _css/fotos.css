@@ -1,0 +1,120 @@
+@charset "UTF-8";
+/* Css ref. a pagina fotos.html */
+p {
+    font-size: 18px;
+}
+ul#album-fotos {
+    width: 700px;
+    padding: 50px;
+    overflow: hidden; /* OVERFLOW:HIDDEN E LIST-STYLE:NONE fazem esconder os bulets da UL  */
+    list-style: none; /* OVERFLOW:HIDDEN E LIST-STYLE:NONE fazem esconder os bulets da UL  */
+    margin: 0 auto;
+}
+ul#album-fotos li {
+    float: left;   /* faz com que a LI fique VERTICAL , como se fosse um linha */
+    width: 200px;   /*criamos uma cx de 200 px na vertical*/
+    height: 200px;  /*criamos uma cx de 200 px na horizontal*/
+    margin: 10px;
+    border: 5px solid rgb(255, 255, 255);    /*Fizemos um borda de 5px branca */
+    background-color: rgb(255, 255, 255);   /* fizemos uma sobra na borda de 5px*/
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+    -webkit-transition: all 0.5s ease-in; /*este WEBKIT trabalha junto com o webkittranforme da linha 35,
+    dando um efeito de tempo de 0.5 segundo , o ALL controla todas as  imagens do LI*/
+    /* o EASY-IN serve para ele crescer suavemente. */
+}
+ul#album-fotos li span {  /* Iremos esconder a legenda*/
+    opacity: 0;  /* Com este parementro de opassidade junto com HOVER faremos a legenda aparece e sumir*/ 
+      /* vamos formatar tudo que estiver entre o SPAN, neste caso a LEGENDA */
+      color: rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, .3);
+      padding: 5px;
+      font-size: 9pt;
+      line-height: 370px; /* faz com que a legante desça 370px*/
+      }
+
+ul#album-fotos li:hover {  /* criando o EFEITO ZOOM OUT junto com a linha  50 */
+    -webkit-transform: scale(1.5); /*Usando este Webkit fazemos um efeito de ESCALA 1.5 
+     ou seja 1 vez e meia o tamanho da imagem , fazendo assim o zoom out*/
+
+}
+ul#album-fotos li:hover span{ /*Iremos mostra a legenda assim que passar o mouse*/
+    opacity: 1;  /* agora legenda aparece assim q passar o mouse*/
+}
+
+li#foto01 { 
+    background: url(../_imagens/galeria-01.jpg) no-repeat; /*Colocamos a img como background 
+    em com a opção NO-REPEAT */
+    background-position: 50% 50%; /*centraliza a imagem no meio dos pixels do WIDTH e do HEIGHT
+    agora veremos o centro da imagem que é 400 px , com isto conseguiremos fazer um efeito ZOOM */
+    background-size: 400px 400px; /* Com este paramentro faço aparecer os 400pixeis da IMG , com isto 
+    criamos um caixa de 400x400 para  o efeito ZOOM */
+    background-color: rgb(255, 255, 255); /*Re confirmamos a cor de fundo do backgroud
+    a nova cx de 400x400 para que no ZOOM não  venha ficar cordata */
+}
+li#foto01:hover {  /* Criando o efeito ZOOM IN 1º parte encolhendo ela,  usando :HOVER quando passarmos
+     o mouse sobre a imagem  ele vai execultar os parametros abaixo */
+     background-position: 0px 0px; /*volta janela localização 0px x 0px de  WIDTHXHEIGHT*/
+    background-size: 200px 200px; /*volta janela para tamanho original de 200x200px WIDTHXHEIGHT*/
+ /*com este 2 aparamentos fazemos o efeito de ENCOLHER a imagem */ 
+
+}
+
+li#foto02 {
+    background: url(../_imagens/galeria-02.jpg) no-repeat;
+    background-position: 50% 50%; 
+    background-size: 400px 400px; 
+    background-color: rgb(255, 255, 255); 
+}
+li#foto02:hover {                 
+    background-position: 0px 0px; /*volta janela localização 0px x 0px de  WIDTHXHEIGHT*/
+   background-size: 200px 200px; /*volta janela para tamanho original de 200x200px WIDTHXHEIGHT*/
+                                /*com este 2 aparamentos fazemos o efeito de ENCOLHER a imagem */ 
+
+}
+
+
+li#foto03 {
+    background: url(../_imagens/galeria-03.jpg) no-repeat;
+    background-position: 50% 50%; 
+    background-size: 400px 400px; 
+    background-color: rgb(255, 255, 255); 
+}
+li#foto03:hover {  
+   background-position: 0px 0px; 
+   background-size: 200px 200px;                            
+
+}
+li#foto04 {
+    background: url(../_imagens/galeria-04.jpg) no-repeat;
+    background-position: 50% 50%; 
+    background-size: 400px 400px;     
+    background-color: rgb(255, 255, 255); 
+}
+li#foto04:hover {  
+    background-position: 0px 0px; 
+    background-size: 200px 200px;                            
+ 
+ }
+
+li#foto05 {
+    background: url(../_imagens/galeria-05.jpg) no-repeat;
+    background-position: 50% 50%; 
+    background-size: 400px 400px;     
+    background-color: rgb(255, 255, 255);
+}
+li#foto05:hover {  
+    background-position: 0px 0px; 
+    background-size: 200px 200px;                            
+ 
+ }
+li#foto06 {
+    background: url(../_imagens/galeria-06.jpg) no-repeat;
+    background-position: 50% 50%; 
+    background-size: 400px 400px;     
+    background-color: rgb(255, 255, 255);
+}
+li#foto06:hover {  
+    background-position: 0px 0px; 
+    background-size: 200px 200px;                            
+ 
+ }
