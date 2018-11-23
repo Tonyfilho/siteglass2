@@ -1,0 +1,26 @@
+@charset "UTF-8" ;
+
+/* Css do arquivo midia.css Aula 31/32 */
+
+div#tv-radio {
+    width: 900px; /* estas são exatas as medidas do arquivo do backgroud abaixo*/
+    height: 580px;
+    margin: auto;
+    background: url(../_imagens/radio-tv.png) no-repeat;  /*usamos aqui uma imagem como backgroud com a opção NO-REPEAT*/
+}
+
+audio#musica {
+    display: block;
+    position: relative;
+    left: 575px;
+    top:  492px;    
+    width: 300px;
+}
+video#filmes {
+    display: block;
+    position: relative;
+    left: 85px;
+    top: 80px;
+    width: 440px; /*aqui o WIDTH serve para criar  um cx de 440 px do tamnho do arquivo de video*/
+
+}

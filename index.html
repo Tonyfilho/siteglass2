@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Tudo sobre o Goggle Glass</title>
 	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/> 
+	<link rel="stylesheet" href="_css/media.css"> <!--Add o CSS na aula 31/32 para conf.os video do Index-->
 </head>
 <script src="_javascript/funcoes.js" > </script>
 <body >
@@ -71,8 +72,11 @@
 
 					<h2> O que você pode fazer com o Google Glasses</h2>
 					<p>O vídeo de divulgação do Google mostra que você pode se transformar em uma espécie de “super-<wbr/>humano”, já que o aparelho pode indicar a quantos metros você está de seu destino, se o metrô está aberto ou fechado, mostrar o clima, agenda e até mesmo permitir que você marque encontros apenas com comandos de voz.</p>
-
-					[AQUI ENTRA UM VÍDEO]
+					<!--       Aula 31, add um VIDEO no INDEX, iremos config. no CSS   O paramentro CONTROLS serve para por um PLAYER no navegador o POSTER serve para por uma foto como poster   -->
+					<div>
+						<video id="videoBotton" src="_media/one-day.mp4" controls="controls" poster="_imagens/video-mini01.jpg"></video>
+					</div>
+					
 				</article>
 			</section> 
 
@@ -80,9 +84,11 @@
 
 				<h1> Outras Notícias</h1>
 				<h2> Vídeo mais recente</h2>
+             <!--       Aula 31, add um VIDEO no INDEX, iremos config. no CSS            -->
+				<div >
+					<video id="videoAside" src="_media/how-it-feels.mp4"  controls="controls" poster="_imagens/video-mini02.jpg"></video>
 
-				[AQUI ENTRA UM VÍDEO]
-
+				</div>
 				<h2>Novidades no Glass</h2>
 				<p>O Google enfim revelou as especificações completas do Google Glass, e com ele uma surpresa ainda inédita no mercado: a gigante das buscas usará um sistema de áudio baseado na transdução por condução. Através das hastes dos óculos, o som será transmitido para o ouvido do usuário por meio de microvibrações em determi&shy;nados ossos de sua cabeça, sem usar nenhum tipo de alto-falante.</p>
 
