@@ -59,11 +59,12 @@
                 </fieldset>
 
                 <fieldset id="endereco">
-              <legend>Endereço do Usuário</legend>  
-                    Logradouro:
-                    Número:
-                    Estado:
-                    Cidade:
+              <legend>Endereço do Usuário</legend>  <!--Colocamos um LABEL em todos os itens do formulario-->
+                   <p><label for="cLogadouro">Logradouro:<input name="tLogadouro" id="cLogadouro" type="text" placeholder="Rua ou Avenida ..."></label></p>
+                   <p><label for="cNumero"> Número:<input name="tNumero" id="cNumero" type="number" min="0" max="99999"></label></p>
+                   <!--Paramentro MIN e MAX são usados somente no TYPE="NUMBER" para pormos quantidade de numero-->
+                   <p><label for="cEstate">Estado:<input name="tEstate" id="cEstate" type="text"></label></p>
+                   <p><label for="cCidade"> Cidade:<input name="tCidade" id="cCidade" type="text"></label></p>      
                 </fieldset>
 
                 <fieldset id="mensagem">
