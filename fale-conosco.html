@@ -41,9 +41,9 @@
 
              <fieldset id="usuario">   <!--tag FIELDSET trabalha dentro da FORM criando um campo para formulario-->
               <legend>Identificação do Usuário</legend>   <!--tag LEGEND trabalha junto com FIELDSET, e é usada para criar TITULOS em forma de LEGENDA no formularios-->
-                  <p>Nome: <input type="text" name="tNome" id="cNome" placeholder="Your Name" required/> </p> <!--add um INPUT="text" para cada campo  NAME e uma ID um PLACEHOLDER onde escrevemos uma mensagem dentro e por ultimo REQUERED que obrida o usuario a preencher  o formulario -->
-                  <p>Senha: <input type="password"  name="tSenha" id="cSenha"  maxlength="12" placeholder="Your Password with 12"  required/> </p>
-                  <p>E-mail: <input type="email"  name="tMail" id="tMail" placeholder="Type your email" required/> </p>
+                  <p><label for="cNome">Nome: </label> <input type="text" name="tNome" id="cNome" placeholder="Your Name" required/> </p> <!--add um INPUT="text" para cada campo  NAME e uma ID um PLACEHOLDER onde escrevemos uma mensagem dentro e por ultimo REQUERED que obrida o usuario a preencher  o formulario -->
+                  <p><label for="cSenha"> Senha:</label> <input type="password"  name="tSenha" id="cSenha"  maxlength="12" placeholder="Your Password with 12"  required/> </p>
+                  <p><label for="cEmail"></label> E-mail: <input type="email"  name="tEmail" id="cEmail" placeholder="Type your email" required/> </p>
                   <fieldset id="sexo"> <!--abrimos outra FIELDSET/LEGEND para por um formulario só para sexo-->
                       <legend> Sexo:</legend>
                      <label for="cMarc">Masculino </label><input type="radio" name="tSexo" id="cMarc" /> <br/>
@@ -69,16 +69,19 @@
 
                 <fieldset id="mensagem">
               <legend> Mensagem do Usuário</legend> 
-                    Grau de Urgência:
-                    Mensagem:
+                    <p><label for="cUrgencia">Grau de Urgência:<input type="text" name="tUrgencia" id="cUrgencia" ></label></p>
+                    <p><label for="cMensagem">Mensagem:<input type="text" name="tMensagem"id="cMensagem"></label></p>
+              
+                    
                 </fieldset>
 
                 <fieldset id="queroGoogle">
              <legend>Quero um Google Glass</legend>  
-                    Gostaria de adquirir um Google Glass quando disponível
-                    Cor:
-                    Quantidade:
-                    Preço Total: R$
+                    <p><label for="cQuero"><input type="radio"  name="tQuero" id="cQuero">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                    <p><label for="cCor">Cor:<input type="text" name="lCor" id="cCor"></label></p>
+                    <p><label for="cQuant">Quantidade:<input type="text" name="lQuant" id="cQuant"></label></p>
+                    <p><label for="cPreco">Preço Total: $<input type="text" name="lPreco" id="cPreco"></label></p>              
+                   
                 </fieldset>
 
 

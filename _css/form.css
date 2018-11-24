@@ -1,2 +1,47 @@
 @charset "UTF-8";
-/* add o arq. FORM.CSS para aula 33 e 34 */
+/* add o arq. FORM.CSS para aula 33 e 36 */
+form {
+    width: 500px;
+    margin: auto;
+
+}
+input, textarea {  
+    /* INPUT, TEXTAREA desta forma configuramos tando o INPUT como TEXTAREA somente separando eles com um , ""Vigula */
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 13pt;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* colocamos aqui dentro do INPUT e do TEXTAERA um BACKGROUD-COLOR RGBA para ele ficar BRANCO mas com uma transparencia , com isto TODAS  as IMAGENS dos BACKGROUD URL ficarão transparencendo as CX, dando um melhor acabamento, muito usando quando temos IMAGENS que estão dentro de INPUTS com isto as IMAGENS ficarão LEVEMENTE CORTADAS quando passarem sobre as CX do INPUT */
+
+}
+input:hover, textarea:hover { 
+     /* INPUT, TEXTAREA desta forma configuramos tando o INPUT como TEXTAREA somente separando eles com um , ""Vigula */
+    background-color: rgb(221, 221, 221);
+    }
+    legend {
+        color: rgb(136, 136, 136);
+        font-weight: bold;
+        font-size: 13pt;
+        font-family: sans-serif;
+    }
+    fieldset {
+        border-color: rgb(203, 206, 206);
+        margin: 20px;
+    }
+    fieldset#sexo {
+        width: 150px; /*Criamos um cx para Field#sexo com 150px*/
+    } 
+    fieldset#usuario {
+        background: url(../_imagens/icone-contato.png) no-repeat 95% 95%; /*Neste paramentros 95% LATERAL 95% VERTICAL colocamos a localização que a imagem vai ficar dentro do FIELD#USUARIO */
+    }
+    fieldset#endereco {
+        background: url(../_imagens/icone-endereco.png) no-repeat 95% 95%;
+    }
+    fieldset#mensagem {
+        background: url(../_imagens/icone-mensagem.png) no-repeat 95% 95%;
+    }
+    fieldset#pedido {
+        background: url(../_imagens/icone-pagamento.png) no-repeat 95% 95%;
+    }
+
+
