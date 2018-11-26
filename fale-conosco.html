@@ -36,7 +36,7 @@
                 <h3 class="direita" >Atualizado em 30/10/2018</h3>
             </hgroup>
         
-            <form action="">
+            <form method="POST" id="fContato" action="mailto:oficinadosdrones@gmail.com"> <!--Aula 34 Temos 2 metados de envio  POST e o GET, o POST envia pacotes de formularios, o GET envia os dados no final da URL, usamos o GOOGLE como exemplo de metodo GET, todo FORM tem que ter um ID e um ACTION é para onde estes dados serão enviados, um servidor ou um pc ou BANCO DE DADOS etc ou usar um PHP ou JS ou PHYTON para receber os dados e depois enviar. O ACTION mais simples é enviar por email, mas o cliente de email tem que ser configurado no PC -->
                 <!-- AULA 33 e 34 add a Tag FORM para criar fomularios no HTML -->
 
              <fieldset id="usuario">   <!--tag FIELDSET trabalha dentro da FORM criando um campo para formulario-->
@@ -51,7 +51,7 @@
 
                      <!--TYPE="radio" cria um circulo para se clicar e escolher uma opção-->
                      <label for="cFem">Feminino</label> <input type="radio" name="tSexo"  id="cFem"/>
-                      <!--OBS: Temos que ter o mesmo NAME tanto no Masculino como Feminino  pois eles estão dentro da mesma SUBFIELD com isto conseguiremos trocar a escolha entre masculino e feminimo, senão fissermos assim ele dará erro  -->
+                      <!--OBS: no TYPE="RADIO"Temos que ter o mesmo NAME tanto no Masculino como Feminino  pois eles estão dentro da mesma FIELD, e isto é exigencia deste paramentro,  com isto conseguiremos trocar a escolha entre masculino e feminimo, senão fissermos assim ele dará erro  -->
                   </fieldset>
                   <p><label for="cData"> Data de Nascimento: </label><input type="date" name="tData" id="cData"  /> </p> 
                    <!-- INPUT TYPE="DATE" cria um cx no formato de DATA  -->
@@ -60,33 +60,73 @@
 
                 <fieldset id="endereco">
               <legend>Endereço do Usuário</legend>  <!--Colocamos um LABEL em todos os itens do formulario-->
-                   <p><label for="cLogadouro">Logradouro:<input name="tLogadouro" id="cLogadouro" type="text" placeholder="Rua ou Avenida ..."></label></p>
-                   <p><label for="cNumero"> Número:<input name="tNumero" id="cNumero" type="number" min="0" max="99999"></label></p>
+                   <p><label for="cLogadouro">Logradouro:<input name="tLogadouro" id="cLogadouro" type="text" placeholder="Rua ou Avenida ..." size="13" maxlength="80"></label></p>
+                   <p><label for="cNumero"> Número:<input name="tNumero" id="cNumero" type="number" min="0" max="99999" ></label></p>
                    <!--Paramentro MIN e MAX são usados somente no TYPE="NUMBER" para pormos quantidade de numero-->
-                   <p><label for="cEstate">Estado:<input name="tEstate" id="cEstate" type="text"></label></p>
-                   <p><label for="cCidade"> Cidade:<input name="tCidade" id="cCidade" type="text"></label></p>      
+                   <p><label for="cEstate">Estado:</label> 
+                    <select name="tEst" id="cEst">
+                    <optgroup label="Região Sudeste"> 
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="ES">Espirito Santo</option>
+                        <option value="SP">São Paulo</option>
+                    </optgroup>
+                        <!--aula 34 Vamos separar os estado por GRUPO usando a TAG OPTGROUP com isto podemos separar por região,add um PARAMENTRO LABEL depois onde descrevemos o OPTGROUP -->
+                    <optgroup label="Região Sul">
+                        <option value="SC">Santa Catariana</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="Pr">Parana</option>
+                    </optgroup> 
+
+                <!--OBS.: Não usaremos a TAG INPUT e usaremos a TAG SELECT em VALUE podemos abrever o nome do estado tipo "ES" é opcional -->
+
+                <!-- Tdo SELECT tem ter um OPTION para cada um item tevemos ter um OPTION-->
+                    </select>
+                
+                </p> <!--AULA 34 Criaremos um oBJETO de seleção de texto usando a TAG SELECT, com esta tag será dado opções de escolha para o Usúario, ela temq ue ficar ANTES do fechamento do PARAGRAFO. a tag SELECT cria CX combidas, TODOS os OBJETOS tem que ter NOME E ID -->
+                   <p><label for="cCid"> Cidade: <input name="tCid" id="cCid" type="text" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"></label> <!--com o paramentro LIST licamos a ID do DATALIST pra trabalhar junto com  INPUT a "STRING cidade" -->
+                   </p> 
+
+<!-- "É opcinal a forma de criação que faremos abaixo, podemos criar os OPTGroups e os OPTIOS, mas vamos fazer com para termos maior didatica DATALIST com DATALIST teremos a opção de autocomplemento, ou seja já aparecerá os nome da cidade que estão no paramentro VALUE preenchidos."        
+-->                 <datalist id="cidades"> <!--Aula 34 Criamos a TAG DATALIST no lugar da SELECT, dentro da DATALIST acriaremos um OPTION , neste caso USAREMOS paramento VALUE de forma diferente do que foi usando no select segue abaixo-->
+                        <option value="Rio de Janeiro" ></option>
+                        <option value="Nova iguaçu"></option>
+                        <option value="Niteroi"></option>
+
+                    </datalist>
+                     
                 </fieldset>
 
                 <fieldset id="mensagem">
               <legend> Mensagem do Usuário</legend> 
-                    <p><label for="cUrgencia">Grau de Urgência:<input type="text" name="tUrgencia" id="cUrgencia" ></label></p>
-                    <p><label for="cMensagem">Mensagem:<input type="text" name="tMensagem"id="cMensagem"></label></p>
+                    <p><label for="cUrg">Grau de Urgência: Mín.<input type="range" min="0" max="10"  step="5" name="tUrg" 
+                    id="cUrg" >Máx.</label></p>
+                    <!-- Temos um novo INPUT="RAGER"  onde se cria um tipo de volume ou stick e colocamos o MINIMO e MÀXIMO e o STEP=5 onde o stick vai se descolcar de 5 a 5 unidades-->
+                    <p><label for="cMens">Mensagem: <textarea name="lMens" id="cMens" cols="30" rows="5" placeholder="Deixe aqui sua Mensagem"></textarea> </label></p>
+                    <!-- Usamos a tag TEXTAREA para criar um campo de mensagem para receber texto do usúario .-->
+                    <!-- A dif do INPUT TYPE=TEXT vc tem somente 1 linha
+                    A TAG TEXTAREA vc escolha o tamanho e quantidade de  linha -->
               
                     
                 </fieldset>
 
                 <fieldset id="queroGoogle">
              <legend>Quero um Google Glass</legend>  
-                    <p><label for="cQuero"><input type="radio"  name="tQuero" id="cQuero">Gostaria de adquirir um Google Glass quando disponível</label></p>
-                    <p><label for="cCor">Cor:<input type="text" name="lCor" id="cCor"></label></p>
-                    <p><label for="cQuant">Quantidade:<input type="text" name="lQuant" id="cQuant"></label></p>
-                    <p><label for="cPreco">Preço Total: $<input type="text" name="lPreco" id="cPreco"></label></p>              
+                    <p><label for="cQuero"><input type="checkbox"  name="tQuero" id="cQuero" checked> Gostaria de adquirir um Google Glass quando disponível</label></p>
+                    <!-- o INPUT=RADIO cria um check box  aquela cx de marcação -->
+                    <p><label for="cCor">Cor: <input type="color"  name="lCor" id="cCor" value="#0000ff"></label></p>
+                    <!-- o INPUT=COLOR cria um cx de cores no paramentro VALUE podemos escolhe uma opção de cor-->
+                    <p><label for="cQtd">Quantidade: <input type="number" name="lQtd" id="cQtd" min="1" max="10" value="1"></label></p>
+                    <!-- o INPUT TYPE=NUMBER cria uma cx de numero por ser NUMBER é bom por um valor mínimo e máximo, o VALUE=1 é o valor padrão que já aparece no campo number-->
+                    <p><label for="cPreco">Preço Total: $ <input type="text" name="lPreco" id="cPreco" placeholder="Total a pagar" readonly></label></p> 
+                    <!--Paramentro READONLY n permite que o usuário somente leia  o campo, sem poder altera-lo   -->
+                    <!-- Iremos criar um SCRIPT para calculo de total lá no HEAD-->
                    
                 </fieldset>
-
-
-            [BOTÃO ENVIAR]
-
+                        <!-- 
+                        <input type="submit" value="Enviar"/>  -->
+                <input type="image" src="_imagens/botao-enviar.png" name="lBotao"  id="cBotão">
+                <!-- INPUT TYPE=IMAGE SRC=diretorio da imagem" cria um botão aparti de uma  imagem -->
+                
         </form>
 
         <footer id="rodape">      
