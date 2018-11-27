@@ -4,8 +4,23 @@
     <meta charset="utf-8" />
     <title>Tudo sobre o Goggle Glass</title>
     <link rel="stylesheet" type="text/css" media="screen" href="_css/estilo.css" />
-    <link rel="stylesheet" href="_css/form.css"> <!--add o arq. FORM.CSS para aula 33 e 34-->
+    <link rel="stylesheet" href="_css/form.css"> <!--add o arq. FORM.CSS para aula 33 e 37-->
     <script   src="_javascript/funcoes.js" > </script>
+    <script>
+        function calcTotal() {
+            var qtd = parseInt (document.getElementById('cQtd').value);
+            var tot = qtd * 1500;
+            /*Os valores da Var=QTD terão q ser NUMERO, usaremos o PARSEINT para converter lo  em numeros INTEIROS, 1500 é o valor em DOLAR de cada oculos */ 
+
+            document.getElementById('cTot').value = tot;
+            /*Este GetelementbyID manda p o cTot lá da FIELDSET Quero Gloogle linha 137 e coloca o valor nela*/
+        }
+    
+    /* aula 36 Outra tag SCRIPT local para usar junto o ONINPUT=calcTotal(); */
+    </script>
+    
+
+    
 </head>
     <body>
         <div id="interface" >
@@ -36,7 +51,10 @@
                 <h3 class="direita" >Atualizado em 30/10/2018</h3>
             </hgroup>
         
-            <form method="POST" id="fContato" action="mailto:oficinadosdrones@gmail.com"> <!--Aula 34 Temos 2 metados de envio  POST e o GET, o POST envia pacotes de formularios, o GET envia os dados no final da URL, usamos o GOOGLE como exemplo de metodo GET, todo FORM tem que ter um ID e um ACTION é para onde estes dados serão enviados, um servidor ou um pc ou BANCO DE DADOS etc ou usar um PHP ou JS ou PHYTON para receber os dados e depois enviar. O ACTION mais simples é enviar por email, mas o cliente de email tem que ser configurado no PC -->
+            <form method="POST" id="fContato" action="mailto:oficinadosdrones@gmail.com" oninput="calcTotal();"> 
+                <!-- ONINPUT=calcTotal(); serve para quando algo for digitado no formulario ele ativar o script -->
+
+                <!--Aula 34 Temos 2 metados de envio  POST e o GET, o POST envia pacotes de formularios, o GET envia os dados no final da URL, usamos o GOOGLE como exemplo de metodo GET, todo FORM tem que ter um ID e um ACTION é para onde estes dados serão enviados, um servidor ou um pc ou BANCO DE DADOS etc ou usar um PHP ou JS ou PHYTON para receber os dados e depois enviar. O ACTION mais simples é enviar por email, mas o cliente de email tem que ser configurado no PC -->
                 <!-- AULA 33 e 34 add a Tag FORM para criar fomularios no HTML -->
 
              <fieldset id="usuario">   <!--tag FIELDSET trabalha dentro da FORM criando um campo para formulario-->
@@ -46,11 +64,11 @@
                   <p><label for="cEmail"></label> E-mail: <input type="email"  name="tEmail" id="cEmail" placeholder="Type your email" required/> </p>
                   <fieldset id="sexo"> <!--abrimos outra FIELDSET/LEGEND para por um formulario só para sexo-->
                       <legend> Sexo:</legend>
-                     <label for="cMarc">Masculino </label><input type="radio" name="tSexo" id="cMarc" /> <br/>
+                     <label for="cMarc"></label><input type="radio" name="tSexo" id="cMarc"/> Masculino <br/>
                      <!-- LABEL são tag usadas junto com FOR="ID" para referencia uma escolha, neste caso facilitar quando o usuário estiver escolhendo qual o seu SEXO, e ele clicar sobre  o NOME MASCULINO a TAG INPUT TYPE="RADIO" vai aceitar como escolha, desta forma fica mais fácil quando usamos um TABLET ou um TELEFONE   -->
 
                      <!--TYPE="radio" cria um circulo para se clicar e escolher uma opção-->
-                     <label for="cFem">Feminino</label> <input type="radio" name="tSexo"  id="cFem"/>
+                     <label for="cFem"><input type="radio" name="tSexo"  id="cFem"/> Feminino</label> 
                       <!--OBS: no TYPE="RADIO"Temos que ter o mesmo NAME tanto no Masculino como Feminino  pois eles estão dentro da mesma FIELD, e isto é exigencia deste paramentro,  com isto conseguiremos trocar a escolha entre masculino e feminimo, senão fissermos assim ele dará erro  -->
                   </fieldset>
                   <p><label for="cData"> Data de Nascimento: </label><input type="date" name="tData" id="cData"  /> </p> 
@@ -86,8 +104,8 @@
                    <p><label for="cCid"> Cidade: <input name="tCid" id="cCid" type="text" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"></label> <!--com o paramentro LIST licamos a ID do DATALIST pra trabalhar junto com  INPUT a "STRING cidade" -->
                    </p> 
 
-<!-- "É opcinal a forma de criação que faremos abaixo, podemos criar os OPTGroups e os OPTIOS, mas vamos fazer com para termos maior didatica DATALIST com DATALIST teremos a opção de autocomplemento, ou seja já aparecerá os nome da cidade que estão no paramentro VALUE preenchidos."        
--->                 <datalist id="cidades"> <!--Aula 34 Criamos a TAG DATALIST no lugar da SELECT, dentro da DATALIST acriaremos um OPTION , neste caso USAREMOS paramento VALUE de forma diferente do que foi usando no select segue abaixo-->
+                    <!-- "É opcinal a forma de criação que faremos abaixo, podemos criar os OPTGroups e os OPTIOS, mas vamos fazer com para termos maior didatica DATALIST com DATALIST teremos a opção de autocomplemento, ou seja já aparecerá os nome da cidade que estão no paramentro VALUE preenchidos."        
+                    -->                 <datalist id="cidades"> <!--Aula 34 Criamos a TAG DATALIST no lugar da SELECT, dentro da DATALIST acriaremos um OPTION , neste caso USAREMOS paramento VALUE de forma diferente do que foi usando no select segue abaixo-->
                         <option value="Rio de Janeiro" ></option>
                         <option value="Nova iguaçu"></option>
                         <option value="Niteroi"></option>
@@ -117,7 +135,7 @@
                     <!-- o INPUT=COLOR cria um cx de cores no paramentro VALUE podemos escolhe uma opção de cor-->
                     <p><label for="cQtd">Quantidade: <input type="number" name="lQtd" id="cQtd" min="1" max="10" value="1"></label></p>
                     <!-- o INPUT TYPE=NUMBER cria uma cx de numero por ser NUMBER é bom por um valor mínimo e máximo, o VALUE=1 é o valor padrão que já aparece no campo number-->
-                    <p><label for="cPreco">Preço Total: $ <input type="text" name="lPreco" id="cPreco" placeholder="Total a pagar" readonly></label></p> 
+                    <p><label for="cTot">Preço Total: $ <input type="text" name="lTot" id="cTot" placeholder="Total a pagar" readonly></label></p> 
                     <!--Paramentro READONLY n permite que o usuário somente leia  o campo, sem poder altera-lo   -->
                     <!-- Iremos criar um SCRIPT para calculo de total lá no HEAD-->
                    
